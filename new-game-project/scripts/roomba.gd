@@ -1,6 +1,7 @@
 extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var camera_2d: Camera2D = $Camera2D
+const tower = preload("uid://8bdc0xc7bxau")
 
 #roomba
 const SPEED = 300.0
@@ -15,10 +16,14 @@ var zoom_speed = Vector2(0.0030,0.0030)
 
 #signal
 signal UI_score_display(score_val : int)
+signal is_right(right : bool)
 
 func _ready() -> void:
 	add_to_group("roomba")
 	connect_to_UI()
+
+func _process(delta: float) -> void:
+	spawn_tower()
 
 func _physics_process(delta: float) -> void:
 	var roomba_direction := Input.get_axis("Left", "Right")
@@ -66,3 +71,13 @@ func connect_to_UI() -> void:
 	var UI = get_tree().get_first_node_in_group("UI")
 	if UI:
 		UI_score_display.connect(UI._display_score)
+		
+func spawn_tower() -> void:
+	if Input.is_action_just_pressed("Build"):
+		var turret = tower.instantiate()
+		is_right.connect(turret._on_roomba_is_right, CONNECT_ONE_SHOT)
+		get_tree().current_scene.add_child(turret)
+		turret.global_position = global_position
+		is_right.emit(roomba_facing == "Right")
+		await get_tree().create_timer(20).timeout
+		turret.queue_free()

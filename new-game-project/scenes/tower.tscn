@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://8bdc0xc7bxau"]
+
+[ext_resource type="Script" uid="uid://ctu0ckl4eptth" path="res://scripts/tower.gd" id="1_ay4al"]
+[ext_resource type="Texture2D" uid="uid://dknf1ps26db70" path="res://Assets/Images/Turret/Turret (196).png" id="2_ay4al"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qii31"]
+size = Vector2(22, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxq6i"]
+atlas = ExtResource("2_ay4al")
+
+[node name="Tower" type="Area2D" unique_id=91977742]
+position = Vector2(21, 0)
+scale = Vector2(3.5167239, 3.5167239)
+script = ExtResource("1_ay4al")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=56313773]
+position = Vector2(-29, -2)
+shape = SubResource("RectangleShape2D_qii31")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1711986789]
+texture_filter = 1
+position = Vector2(-27.013779, -4.8340445)
+scale = Vector2(0.6562499, 0.65625)
+texture = SubResource("AtlasTexture_qxq6i")

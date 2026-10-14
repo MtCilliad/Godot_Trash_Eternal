@@ -28,6 +28,7 @@ signal brand_new_day(day_number : int)
 func _ready() -> void:
 	new_game()
 	earth.value = ground_hp
+	earth.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
