@@ -4,7 +4,7 @@ const trash_scene = [
 	preload("uid://mlrbcbhbn4hq"),
 	preload("uid://bbmdg2vbj2v6c"),
 	preload("uid://bcaxjoaon1crh"),
-	preload("uid://cjahwre1kv70c")
+	#preload("uid://cjahwre1kv70c")
 ]
 var trash_timer : float = 0.0
 var trash_spawn_interval : float = 2.0

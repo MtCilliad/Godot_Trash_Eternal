@@ -59,35 +59,19 @@ func new_day(sec_past : float) -> void:
 		brand_new_day.emit(day)
 		print("Day: ",day)
 	if ground_hp >= 400:
-		bg1.visible = true
-		bg2.visible = false
-		bg3.visible = false
-		bg4.visible = false
-		sg1.play("State1")
-		sg2.play("State1")
-		sg3.play("State1")
+		change_state(true, false, false, false, "State1")
 	elif ground_hp >= 300 and ground_hp <= 399:
-		bg1.visible = false
-		bg2.visible = true
-		bg3.visible = false
-		bg4.visible = false
-		sg1.play("State2")
-		sg2.play("State2")
-		sg3.play("State2")
+		change_state(false, true, false, false, "State2")
 	elif ground_hp >= 200 and ground_hp <= 299:
-		bg1.visible = false
-		bg2.visible = false
-		bg3.visible = true
-		bg4.visible = false
-		sg1.play("State3")
-		sg2.play("State3")
-		sg3.play("State3")
+		change_state(false, false, true, false, "State3")
 	elif ground_hp >= 100 and ground_hp <= 199:
-		bg1.visible = false
-		bg2.visible = false
-		bg3.visible = false
-		bg4.visible = true
-		sg1.play("State4")
-		sg2.play("State4")
-		sg3.play("State4")
+		change_state(false, false, false, true, "State4")
 		
+func change_state(state1 : bool, state2 : bool, state3 : bool, state4 : bool, sewers : String):
+	bg1.visible = state1
+	bg2.visible = state2
+	bg3.visible = state3
+	bg4.visible = state4
+	sg1.play(sewers)
+	sg2.play(sewers)
+	sg3.play(sewers)
