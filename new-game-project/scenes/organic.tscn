@@ -153,10 +153,10 @@ shape = SubResource("RectangleShape2D_1x302")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=979467036]
 texture_filter = 1
-position = Vector2(4.5e-44, -5.000002)
+position = Vector2(3.5527137e-15, -2.3841858e-07)
 scale = Vector2(1.0368246, 0.8972521)
 sprite_frames = SubResource("SpriteFrames_adag5")
-animation = &"Var1"
+animation = &"lvl1"
 autoplay = "Var1"
 
 [node name="Health" type="ProgressBar" parent="." unique_id=181744685]

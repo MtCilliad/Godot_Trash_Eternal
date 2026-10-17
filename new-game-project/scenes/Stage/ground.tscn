@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ctt065dtff8gg" path="res://scenes/game_background.tscn" id="2_vehv0"]
 [ext_resource type="PackedScene" uid="uid://k0wkje5vqfwl" path="res://scenes/game_background_3.tscn" id="4_du5yk"]
 [ext_resource type="PackedScene" uid="uid://dvj4mtdsubo3o" path="res://scenes/game_background_4.tscn" id="5_wljyq"]
+[ext_resource type="PackedScene" uid="uid://bhy2jw7nx3nay" path="res://scenes/event.tscn" id="6_8oy7d"]
 [ext_resource type="PackedScene" uid="uid://cmq54spx067ka" path="res://scenes/human_spawner.tscn" id="6_vehv0"]
 [ext_resource type="PackedScene" uid="uid://dljujrvf2x403" path="res://scenes/game_background_2.tscn" id="7_2odsf"]
 [ext_resource type="Texture2D" uid="uid://dsiw6gxbe7v3t" path="res://Assets/Images/Sewage/[new ground tile]sample_ground_pattern.png" id="8_betfj"]
@@ -906,6 +907,8 @@ visible = false
 [node name="Game_Background_4" parent="Backgrounds" unique_id=1670555906 instance=ExtResource("5_wljyq")]
 visible = false
 
+[node name="Event" parent="." unique_id=384692090 instance=ExtResource("6_8oy7d")]
+
 [node name="Ground_Tiles" type="TileMapLayer" parent="." unique_id=61937662]
 texture_filter = 1
 scale = Vector2(3, 3)
@@ -1012,3 +1015,6 @@ offset_bottom = 48.0
 theme_override_styles/background = SubResource("StyleBoxFlat_vehv0")
 theme_override_styles/fill = SubResource("StyleBoxFlat_2odsf")
 max_value = 500.0
+
+[connection signal="trigger_event" from="." to="Event" method="_on_ground_trigger_event"]
+[connection signal="increase_spawn_rates" from="Event" to="human_spawner" method="_on_event_increase_spawn_rates"]

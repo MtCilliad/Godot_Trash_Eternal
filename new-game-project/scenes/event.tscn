@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://bhy2jw7nx3nay"]
+
+[ext_resource type="Script" uid="uid://b1vwser0mr6y7" path="res://scripts/event.gd" id="1_y83ao"]
+
+[sub_resource type="Curve" id="Curve_y83ao"]
+_data = [Vector2(0.042553194, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.23595512), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_lb7m0"]
+colors = PackedColorArray(0.20957875, 0.3717173, 0.5302731, 1, 1, 1, 1, 1)
+
+[node name="Event" type="Node2D" unique_id=384692090]
+script = ExtResource("1_y83ao")
+
+[node name="Particles" type="Node2D" parent="." unique_id=983075601]
+position = Vector2(-1014, -433)
+
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="Particles" unique_id=1968182306]
+position = Vector2(404, 1080)
+amount = 94
+lifetime = 1.72
+emission_shape = 3
+emission_rect_extents = Vector2(476.63, 1)
+gravity = Vector2(0, -980)
+scale_amount_min = 4.75
+scale_amount_max = 9.4
+scale_amount_curve = SubResource("Curve_y83ao")
+color = Color(0.4, 0.6, 0.8, 1)
+color_initial_ramp = SubResource("Gradient_lb7m0")
+
+[node name="CPUParticles2D4" type="CPUParticles2D" parent="Particles" unique_id=953886763]
+position = Vector2(1356, 1085)
+amount = 94
+lifetime = 1.72
+emission_shape = 3
+emission_rect_extents = Vector2(476.63, 1)
+gravity = Vector2(0, -980)
+scale_amount_min = 4.75
+scale_amount_max = 9.4
+scale_amount_curve = SubResource("Curve_y83ao")
+color = Color(0.4, 0.6, 0.8, 1)
+color_initial_ramp = SubResource("Gradient_lb7m0")
+
+[node name="CPUParticles2D5" type="CPUParticles2D" parent="Particles" unique_id=2022954351]
+position = Vector2(2323, 1078)
+amount = 94
+lifetime = 1.72
+emission_shape = 3
+emission_rect_extents = Vector2(476.63, 1)
+gravity = Vector2(0, -980)
+scale_amount_min = 4.75
+scale_amount_max = 9.4
+scale_amount_curve = SubResource("Curve_y83ao")
+color = Color(0.4, 0.6, 0.8, 1)
+color_initial_ramp = SubResource("Gradient_lb7m0")
+
+[node name="CPUParticles2D6" type="CPUParticles2D" parent="Particles" unique_id=1566474144]
+position = Vector2(3271, 1083)
+amount = 94
+lifetime = 1.72
+emission_shape = 3
+emission_rect_extents = Vector2(476.63, 1)
+gravity = Vector2(0, -980)
+scale_amount_min = 4.75
+scale_amount_max = 9.4
+scale_amount_curve = SubResource("Curve_y83ao")
+color = Color(0.4, 0.6, 0.8, 1)
+color_initial_ramp = SubResource("Gradient_lb7m0")

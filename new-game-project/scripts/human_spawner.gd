@@ -53,3 +53,11 @@ func add_hums(hums):
 #signals
 func _on_humanv_2_roomba_touched() -> void:
 	print("testing")
+
+func set_human_spawn_rate(rates : float):
+	human_spawn_rate = rates
+	print("new human spawn rate: ",rates)
+
+func _on_event_increase_spawn_rates(rates: float) -> void:
+	set_human_spawn_rate(rates)
+	print("set spawn rates on human")

@@ -11,19 +11,30 @@ point_count = 3
 [sub_resource type="Gradient" id="Gradient_dg753"]
 colors = PackedColorArray(0, 0.32156864, 0.28627452, 1, 1, 1, 1, 1)
 
-[node name="Particles" type="CanvasLayer" unique_id=1737714842]
+[sub_resource type="Curve" id="Curve_qc6lc"]
+_data = [Vector2(0.042553194, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.23595512), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_yh60o"]
+colors = PackedColorArray(0.20957875, 0.3717173, 0.5302731, 1, 1, 1, 1, 1)
+
+[node name="Event" type="CanvasLayer" unique_id=1737714842]
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=645499401]
+visible = false
 position = Vector2(-8, 495)
+emitting = false
 amount = 200
 lifetime = 1.35
 emission_shape = 1
-emission_sphere_radius = 15.67
+emission_sphere_radius = 11.42
 direction = Vector2(0, 0)
 spread = 180.0
 gravity = Vector2(250, -432.575)
+initial_velocity_max = 30.56
 radial_accel_min = 100.0
 radial_accel_max = 134.85
+angle_max = 720.0
 scale_amount_min = 5.0
 scale_amount_max = 8.3
 split_scale = true
@@ -33,16 +44,20 @@ color = Color(0.4, 0.6, 0.8, 1)
 color_initial_ramp = SubResource("Gradient_dg753")
 
 [node name="CPUParticles2D2" type="CPUParticles2D" parent="." unique_id=1079978246]
+visible = false
 position = Vector2(944, 495)
+emitting = false
 amount = 200
 lifetime = 1.35
 emission_shape = 1
-emission_sphere_radius = 15.67
+emission_sphere_radius = 11.42
 direction = Vector2(0, 0)
 spread = 180.0
 gravity = Vector2(-250, -432.575)
+initial_velocity_max = 30.56
 radial_accel_min = 100.0
 radial_accel_max = 134.85
+angle_max = 720.0
 scale_amount_min = 5.0
 scale_amount_max = 8.3
 split_scale = true
@@ -50,3 +65,16 @@ scale_curve_x = SubResource("Curve_qii31")
 scale_curve_y = SubResource("Curve_qxq6i")
 color = Color(0.4, 0.6, 0.8, 1)
 color_initial_ramp = SubResource("Gradient_dg753")
+
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="." unique_id=1412731822]
+position = Vector2(465, 656)
+amount = 94
+lifetime = 1.72
+emission_shape = 3
+emission_rect_extents = Vector2(476.63, 1)
+gravity = Vector2(0, -980)
+scale_amount_min = 4.75
+scale_amount_max = 9.4
+scale_amount_curve = SubResource("Curve_qc6lc")
+color = Color(0.4, 0.6, 0.8, 1)
+color_initial_ramp = SubResource("Gradient_yh60o")

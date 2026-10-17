@@ -58,19 +58,19 @@ func level_up() -> void:
 	if trash_xp >= trash_level_max:
 		animated_sprite_2d.play("lvl4")
 		print("trash now at lvl 4")
-		dmg = 4 + dmg
+		#dmg = 4 + dmg
 		hp += 10
 		health.max_value = hp
 	elif trash_xp >= 12:
 		animated_sprite_2d.play("lvl3")
 		print("trash now at lvl 3")
-		dmg = 3 + dmg
+		#dmg = 3 + dmg
 		hp += 10
 		health.max_value = hp
 	elif trash_xp >= 5:
 		animated_sprite_2d.play("lvl2")
 		print("trash now at lvl 2")
-		dmg = 2 + dmg
+		#dmg = 2 + dmg
 		hp += 10
 		health.max_value = hp
 	else:

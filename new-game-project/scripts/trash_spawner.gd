@@ -13,7 +13,7 @@ var trash_spawn_chance : float = 0.5
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	_connect_to_event()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -43,3 +43,16 @@ func _on_trash_trash_detected(trash, max) -> void:
 	else:
 		print("Trash not full yet")
 		return
+		
+func _set_trash_spawn_rate(amount : float) -> void:
+	trash_spawn_rate = amount
+	
+func set_new_spawn_rates(rates: float) -> void:
+	_set_trash_spawn_rate(rates)
+	print("new trash spawn rate: ",rates)
+
+func _connect_to_event() -> void:
+	var event := get_tree().get_first_node_in_group("Event")
+	if event:
+		event.increase_spawn_rates.connect(set_new_spawn_rates)
+		set_new_spawn_rates(event.current_spawn_rate)

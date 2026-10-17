@@ -154,7 +154,7 @@ shape = SubResource("RectangleShape2D_cixle")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=7138079]
 texture_filter = 1
-position = Vector2(-1.2621775e-29, -6.000002)
+position = Vector2(-4.5e-44, -2.3841858e-07)
 scale = Vector2(1.0368246, 0.8972521)
 sprite_frames = SubResource("SpriteFrames_jfite")
 animation = &"Var1"

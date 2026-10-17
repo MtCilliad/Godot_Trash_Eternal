@@ -7,14 +7,18 @@ extends Node2D
 @onready var sg1: AnimatedSprite2D = $Props/Sewage/Sewage1
 @onready var sg2: AnimatedSprite2D = $Props/Sewage/Sewage2
 @onready var sg3: AnimatedSprite2D = $Props/Sewage/Sewage3
-
+@onready var event: Node2D = $Event
 
 var timer
 
-#days(not implemented yet)
+#days
 var day : int
 var day_timer := 0.0
-var day_interval := 10
+var day_interval := 20
+
+#event
+var event_chance := 0.4
+var current_spawn_rate := 1.0
 
 #Ground
 var ground_hp = 500
@@ -24,9 +28,11 @@ var dmg_interval := 3.0
 #Signals
 signal game_over
 signal brand_new_day(day_number : int)
+signal trigger_event(trigger : String)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	add_to_group("ground")
 	new_game()
 	earth.value = ground_hp
 	earth.visible = false
@@ -60,6 +66,12 @@ func new_day(sec_past : float) -> void:
 		day += 1
 		brand_new_day.emit(day)
 		print("Day: ",day)
+		if randf() < event_chance:
+			trigger_event.emit("Yes")
+			print("Event triggered")
+		else:
+			trigger_event.emit("No")
+			print("Event not triggered")
 	if ground_hp >= 400:
 		change_state(true, false, false, false, "State1")
 	elif ground_hp >= 300 and ground_hp <= 399:

@@ -7,8 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://djf7keuxeyyoh" path="res://scenes/ui.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://bwu2h1n1tqfb0" path="res://scenes/transition.tscn" id="6_u5sy4"]
 [ext_resource type="Script" uid="uid://deeyk4spa2nhm" path="res://scripts/transition.gd" id="7_gee14"]
-[ext_resource type="PackedScene" uid="uid://cmyknh4oo3wac" path="res://scenes/particles.tscn" id="8_0tnpc"]
-[ext_resource type="Script" uid="uid://dg4b2oxni1mha" path="res://scripts/particles.gd" id="9_vtaks"]
 
 [node name="Game" type="Node2D" unique_id=812271920]
 script = ExtResource("1_yqjtg")
@@ -25,9 +23,6 @@ visible = false
 
 [node name="Transition" parent="." unique_id=1215688452 instance=ExtResource("6_u5sy4")]
 script = ExtResource("7_gee14")
-
-[node name="Particles" parent="." unique_id=1737714842 instance=ExtResource("8_0tnpc")]
-script = ExtResource("9_vtaks")
 
 [connection signal="brand_new_day" from="Ground" to="UI" method="_on_ground_brand_new_day"]
 [connection signal="brand_new_day" from="Ground" to="Transition" method="_on_ground_brand_new_day"]
