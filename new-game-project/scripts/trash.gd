@@ -13,6 +13,8 @@ var checking := true
 var trash_level_max = 22
 var trash_is_max := false
 var is_pile := false
+var variation : Array = ["Var1", "Var2"]
+var chosen = variation.pick_random()
 
 @export var hp = 10 : set = _set_health
 @export var dmg = 1
@@ -33,6 +35,7 @@ func _ready() -> void:
 		health.value = hp
 	await get_tree().create_timer(0.1).timeout
 	checking = false
+	animated_sprite_2d.play(chosen)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
