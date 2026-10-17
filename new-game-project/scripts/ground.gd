@@ -4,16 +4,17 @@ extends Node2D
 @onready var bg2: Node2D = $Backgrounds/Game_Background_2
 @onready var bg3: Node2D = $Backgrounds/Game_Background_3
 @onready var bg4: Node2D = $Backgrounds/Game_Background_4
-@onready var sg1: AnimatedSprite2D = $Props/Sewage
-@onready var sg2: AnimatedSprite2D = $Props/Sewage2
-@onready var sg3: AnimatedSprite2D = $Props/Sewage3
+@onready var sg1: AnimatedSprite2D = $Props/Sewage/Sewage1
+@onready var sg2: AnimatedSprite2D = $Props/Sewage/Sewage2
+@onready var sg3: AnimatedSprite2D = $Props/Sewage/Sewage3
+
 
 var timer
 
 #days(not implemented yet)
 var day : int
 var day_timer := 0.0
-var day_interval := 30
+var day_interval := 10
 
 #Ground
 var ground_hp = 500
