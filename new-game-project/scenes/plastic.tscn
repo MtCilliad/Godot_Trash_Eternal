@@ -146,6 +146,7 @@ health = NodePath("Health")
 nearby_trash = NodePath("Nearby")
 dmg = 2
 xp_given = 2
+score_give = 500
 metadata/_custom_type_script = "uid://r7fgkvst3urr"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1822163043]

@@ -17,6 +17,7 @@ var is_pile := false
 @export var hp = 10 : set = _set_health
 @export var dmg = 1
 @export var xp_given = 1
+@export var score_give = 100 : set = _set_score
 
 signal trash_detected(trash: Area2D, if_full: bool)
 signal trash_dmg(damage)
@@ -81,6 +82,9 @@ func _set_health(new_value : int):
 	if health:
 		health.value = hp
 		
+func _set_score(new_value : int):
+	score_give = new_value
+		
 func roomba_touched():
 	roomba_enter = true
 	while(hp > 0 and roomba_enter):
@@ -89,7 +93,7 @@ func roomba_touched():
 		await get_tree().create_timer(0.5).timeout
 	if hp == 0:
 		trash.queue_free()
-		give_score.emit(100)
+		give_score.emit(score_give)
 
 func _on_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	print(body.name)

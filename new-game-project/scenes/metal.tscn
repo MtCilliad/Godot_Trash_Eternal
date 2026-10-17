@@ -147,6 +147,7 @@ nearby_trash = NodePath("Nearby")
 hp = 20
 dmg = 3
 xp_given = 3
+score_give = 800
 metadata/_custom_type_script = "uid://r7fgkvst3urr"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=712143224]
