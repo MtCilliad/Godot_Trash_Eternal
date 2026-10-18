@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://dsiw6gxbe7v3t" path="res://Assets/Images/Sewage/[new ground tile]sample_ground_pattern.png" id="8_betfj"]
 [ext_resource type="Texture2D" uid="uid://dl0ijrm3blend" path="res://Assets/Images/Props/trash_props.png" id="8_wljyq"]
 [ext_resource type="Texture2D" uid="uid://dac66e1u5ec21" path="res://Assets/Images/Sewage/New sewage.png" id="10_8oy7d"]
+[ext_resource type="AudioStream" uid="uid://i1sk7l4hbpr5" path="res://Assets/Sounds/Sewage.mp3" id="12_2fw2u"]
+[ext_resource type="AudioStream" uid="uid://bw7pxkfqkgunq" path="res://Assets/Sounds/Bg2.mp3" id="15_j3d4b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j4yi7"]
 texture = ExtResource("1_ofj0t")
@@ -970,6 +972,14 @@ sprite_frames = SubResource("SpriteFrames_qxq6i")
 animation = &"State1"
 autoplay = "State1"
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Props/Sewage/Sewage1" unique_id=566014080]
+stream = ExtResource("12_2fw2u")
+volume_db = -6.0
+autoplay = true
+stream_paused = true
+max_distance = 500.0
+parameters/looping = true
+
 [node name="Sewage2" type="AnimatedSprite2D" parent="Props/Sewage" unique_id=455203439]
 texture_filter = 1
 position = Vector2(624, 672)
@@ -978,6 +988,13 @@ sprite_frames = SubResource("SpriteFrames_qxq6i")
 animation = &"State1"
 autoplay = "State1"
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Props/Sewage/Sewage2" unique_id=1558193497]
+stream = ExtResource("12_2fw2u")
+volume_db = -6.0
+autoplay = true
+max_distance = 500.0
+parameters/looping = true
+
 [node name="Sewage3" type="AnimatedSprite2D" parent="Props/Sewage" unique_id=896783220]
 texture_filter = 1
 position = Vector2(2352, 672)
@@ -985,6 +1002,13 @@ scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_qxq6i")
 animation = &"State1"
 autoplay = "State1"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Props/Sewage/Sewage3" unique_id=845848767]
+stream = ExtResource("12_2fw2u")
+volume_db = -6.0
+autoplay = true
+max_distance = 500.0
+parameters/looping = true
 
 [node name="Roomba" parent="." unique_id=1418096865 instance=ExtResource("1_2pn6s")]
 position = Vector2(548, 608)
@@ -1015,6 +1039,12 @@ offset_bottom = 48.0
 theme_override_styles/background = SubResource("StyleBoxFlat_vehv0")
 theme_override_styles/fill = SubResource("StyleBoxFlat_2odsf")
 max_value = 500.0
+
+[node name="Sfx_Ground" type="AudioStreamPlayer" parent="." unique_id=971142385]
+stream = ExtResource("15_j3d4b")
+volume_db = -5.0
+autoplay = true
+parameters/looping = true
 
 [connection signal="trigger_event" from="." to="Event" method="_on_ground_trigger_event"]
 [connection signal="increase_spawn_rates" from="Event" to="human_spawner" method="_on_event_increase_spawn_rates"]

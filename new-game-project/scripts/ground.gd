@@ -8,6 +8,7 @@ extends Node2D
 @onready var sg2: AnimatedSprite2D = $Props/Sewage/Sewage2
 @onready var sg3: AnimatedSprite2D = $Props/Sewage/Sewage3
 @onready var event: Node2D = $Event
+@onready var sfx_ground: AudioStreamPlayer = $Sfx_Ground
 
 var timer
 
@@ -19,6 +20,7 @@ var day_interval := 20
 #event
 var event_chance := 0.4
 var current_spawn_rate := 1.0
+var event_active := false
 
 #Ground
 var ground_hp = 500
@@ -34,6 +36,7 @@ signal trigger_event(trigger : String)
 func _ready() -> void:
 	add_to_group("ground")
 	new_game()
+	sfx_ground.play()
 	earth.value = ground_hp
 	earth.visible = false
 
@@ -67,9 +70,14 @@ func new_day(sec_past : float) -> void:
 		brand_new_day.emit(day)
 		print("Day: ",day)
 		if randf() < event_chance:
+			event_active = true
+			sfx_ground.stop()
 			trigger_event.emit("Yes")
 			print("Event triggered")
 		else:
+			if event_active:
+				event_active = false
+				sfx_ground.play() 
 			trigger_event.emit("No")
 			print("Event not triggered")
 	if ground_hp >= 400:

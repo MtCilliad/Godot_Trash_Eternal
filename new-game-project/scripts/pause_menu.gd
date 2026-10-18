@@ -1,4 +1,5 @@
 extends CanvasLayer
+@onready var sfx_pause: AudioStreamPlayer = $AudioStreamPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,6 +12,7 @@ func _process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("Pause"):
+		sfx_pause.play()
 		if get_tree().paused:
 			visible = false
 			get_tree().paused = false
@@ -21,6 +23,7 @@ func _input(event: InputEvent) -> void:
 func _on_continue_pressed() -> void:
 	visible = false
 	get_tree().paused = false
+	sfx_pause.play()
 
 func _on_quit_pressed() -> void:
 	get_tree().paused = false

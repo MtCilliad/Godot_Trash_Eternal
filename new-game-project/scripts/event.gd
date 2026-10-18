@@ -3,6 +3,7 @@ extends Node2D
 @onready var par2: CPUParticles2D = $Particles/CPUParticles2D4
 @onready var par3: CPUParticles2D = $Particles/CPUParticles2D5
 @onready var par4: CPUParticles2D = $Particles/CPUParticles2D6
+@onready var sfx_event: AudioStreamPlayer = $Sfx_Event
 
 var set_spawn_rates := 2.0
 var current_spawn_rate := default
@@ -23,11 +24,13 @@ func _process(delta: float) -> void:
 
 func _on_ground_trigger_event(trigger : String) -> void:
 	if trigger == "Yes":
+		sfx_event.play()
 		current_spawn_rate = set_spawn_rates
 		increase_spawn_rates.emit(set_spawn_rates)
 		print("setting spawn rate")
 		_set_emitting(true)
 	else:
+		sfx_event.stop()
 		current_spawn_rate = default
 		increase_spawn_rates.emit(default)
 		print("not setting spawn rate")

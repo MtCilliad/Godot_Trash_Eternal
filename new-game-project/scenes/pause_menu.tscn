@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bwxa0wearom07" path="res://Assets/Images/Pause Menu/280x190 pause_menu_bg.png" id="2_5d2l8"]
 [ext_resource type="Texture2D" uid="uid://bid5cwpufogjf" path="res://Assets/Images/Pause Menu/280x190 pause_menu_resume_button.png" id="3_7l7mv"]
 [ext_resource type="Texture2D" uid="uid://b3ogprjngb2r2" path="res://Assets/Images/Pause Menu/280x190 pause_menu_exit_button.png" id="4_v4r4p"]
+[ext_resource type="AudioStream" uid="uid://cxqkuomf481jt" path="res://Assets/Sounds/Pause2.wav" id="5_7l7mv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dg753"]
 atlas = ExtResource("3_7l7mv")
@@ -80,6 +81,10 @@ scale = Vector2(2.2647274, 2.2647274)
 texture_normal = SubResource("AtlasTexture_qii31")
 texture_pressed = SubResource("AtlasTexture_qxq6i")
 texture_hover = SubResource("AtlasTexture_qc6lc")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2102312752]
+stream = ExtResource("5_7l7mv")
+volume_db = -9.123
 
 [connection signal="pressed" from="Control/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="Control/Quit" to="." method="_on_quit_pressed"]

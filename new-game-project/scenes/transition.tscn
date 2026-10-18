@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cvn68lco8rwo" path="res://Assets/Images/Transition/240x120 day_transition.png" id="1_rerct"]
 [ext_resource type="Texture2D" uid="uid://bkycb0nk3pr55" path="res://Assets/Images/Transition/240x120 day_transition_transparent.png" id="2_f0i4t"]
+[ext_resource type="AudioStream" uid="uid://dx634wmct0mt1" path="res://Assets/Sounds/Transition(1).MP3" id="3_px735"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f0i4t"]
 atlas = ExtResource("1_rerct")
@@ -206,7 +207,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"default",
-"speed": 18.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -278,3 +279,7 @@ sprite_frames = SubResource("SpriteFrames_qii31")
 autoplay = "default"
 frame = 17
 frame_progress = 1.0
+
+[node name="Sfx_Transition" type="AudioStreamPlayer" parent="." unique_id=412201324]
+stream = ExtResource("3_px735")
+volume_db = -9.0

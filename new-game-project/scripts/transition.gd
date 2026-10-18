@@ -1,5 +1,6 @@
 extends CanvasLayer
 @onready var transition: AnimatedSprite2D = $AnimatedSprite2D
+@onready var sfx_transition: AudioStreamPlayer = $Sfx_Transition
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,3 +14,4 @@ func _on_ground_brand_new_day(day_number: int) -> void:
 	transition.visible = true
 	print("transition is playing")
 	transition.play("default")
+	sfx_transition.play()

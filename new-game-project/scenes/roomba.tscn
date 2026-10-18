@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d1kpu1i6qvyxy" path="res://Assets/Images/Roomba/c4k3_left.png" id="2_422wd"]
 [ext_resource type="Texture2D" uid="uid://hn4qw4wyj4y1" path="res://Assets/Images/Roomba/c4k3_right.png" id="3_4d1aq"]
 [ext_resource type="Texture2D" uid="uid://e8gdwhi4g6qp" path="res://Assets/Images/Roomba/c4k3_left_moving[thicker sparks].png" id="3_5lmfy"]
+[ext_resource type="AudioStream" uid="uid://bqn3v3qig6qb3" path="res://Assets/Sounds/Movement.mp3" id="5_5lmfy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_422wd"]
 atlas = ExtResource("2_422wd")
@@ -114,3 +115,7 @@ limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 3.785
 editor_draw_limits = true
+
+[node name="Sfx_Moving" type="AudioStreamPlayer2D" parent="." unique_id=1351762668]
+stream = ExtResource("5_5lmfy")
+volume_db = -9.235

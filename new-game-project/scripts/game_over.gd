@@ -1,6 +1,7 @@
 extends CanvasLayer
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var final_score_display: Label = $Final_Score
+@onready var sfx_game_over: AudioStreamPlayer = $Sfx_Game_Over
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,6 +16,7 @@ func _process(delta: float) -> void:
 
 func _on_ground_game_over() -> void:
 	print("Game over")
+	sfx_game_over.play()
 	visible = true
 	get_tree().paused = true
 	animated_sprite_2d.play("game_over")

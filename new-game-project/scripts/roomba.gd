@@ -1,6 +1,8 @@
 extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var camera_2d: Camera2D = $Camera2D
+@onready var sfx_moving: AudioStreamPlayer2D = $Sfx_Moving
+
 const tower = preload("uid://8bdc0xc7bxau")
 
 #roomba

@@ -1,4 +1,5 @@
 extends Node2D
+@onready var trash_cleaned: AudioStreamPlayer = $Trash_Cleaned
 
 const trash_scene = [
 	preload("uid://mlrbcbhbn4hq"),

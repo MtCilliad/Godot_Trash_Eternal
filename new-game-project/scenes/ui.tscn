@@ -8,10 +8,11 @@ script = ExtResource("1_m6e0p")
 
 [node name="Days" type="Label" parent="." unique_id=11844063]
 texture_filter = 1
-offset_left = 131.0
-offset_top = 59.0
-offset_right = 317.0
-offset_bottom = 149.0
+offset_left = 178.00002
+offset_top = 45.000004
+offset_right = 364.0
+offset_bottom = 108.0
+scale = Vector2(0.859525, 0.859525)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.6117647)
 theme_override_constants/outline_size = 9
 theme_override_fonts/font = ExtResource("1_fyqef")
@@ -20,12 +21,26 @@ text = "Day: 0"
 
 [node name="Score" type="Label" parent="." unique_id=500599072]
 texture_filter = 1
-offset_left = 459.0
-offset_top = 59.0
-offset_right = 1127.0
-offset_bottom = 123.0
+offset_left = 523.0
+offset_top = 49.0
+offset_right = 1191.0
+offset_bottom = 112.0
+scale = Vector2(0.859525, 0.859525)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.57254905)
 theme_override_constants/outline_size = 9
 theme_override_fonts/font = ExtResource("1_fyqef")
 theme_override_font_sizes/font_size = 76
 text = "Score: 0"
+
+[node name="Highest" type="Label" parent="." unique_id=1200309038]
+texture_filter = 1
+offset_left = 518.0
+offset_top = 117.0
+offset_right = 1186.0
+offset_bottom = 180.0
+scale = Vector2(0.859525, 0.859525)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.57254905)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("1_fyqef")
+theme_override_font_sizes/font_size = 76
+text = "Highest: 0"

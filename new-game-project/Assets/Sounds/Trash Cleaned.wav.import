@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://8rkx7s83h6al"
+path="res://.godot/imported/Trash Cleaned.wav-ff800c13b7050795baba6b7fb9e24140.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Trash Cleaned.wav"
+dest_files=["res://.godot/imported/Trash Cleaned.wav-ff800c13b7050795baba6b7fb9e24140.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

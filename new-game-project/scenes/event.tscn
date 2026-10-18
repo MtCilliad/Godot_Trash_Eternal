@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bhy2jw7nx3nay"]
 
 [ext_resource type="Script" uid="uid://b1vwser0mr6y7" path="res://scripts/event.gd" id="1_y83ao"]
+[ext_resource type="AudioStream" uid="uid://den1jjnb7ov6o" path="res://Assets/Sounds/Event2.mp3" id="2_lb7m0"]
 
 [sub_resource type="Curve" id="Curve_y83ao"]
 _data = [Vector2(0.042553194, 1), 0.0, 0.0, 0, 0, Vector2(0.82978725, 0.7415731), 0.0, 0.0, 0, 0, Vector2(1, 0.23595512), 0.0, 0.0, 0, 0]
@@ -19,7 +20,7 @@ position = Vector2(-1014, -433)
 [node name="CPUParticles2D3" type="CPUParticles2D" parent="Particles" unique_id=1968182306]
 position = Vector2(410, 1084)
 amount = 94
-lifetime = 1.9200000000000002
+lifetime = 1.92
 emission_shape = 3
 emission_rect_extents = Vector2(476.63, 1)
 gravity = Vector2(0, -980)
@@ -32,7 +33,7 @@ color_initial_ramp = SubResource("Gradient_lb7m0")
 [node name="CPUParticles2D4" type="CPUParticles2D" parent="Particles" unique_id=953886763]
 position = Vector2(1356, 1085)
 amount = 94
-lifetime = 1.9200000000000002
+lifetime = 1.92
 emission_shape = 3
 emission_rect_extents = Vector2(476.63, 1)
 gravity = Vector2(0, -980)
@@ -45,7 +46,7 @@ color_initial_ramp = SubResource("Gradient_lb7m0")
 [node name="CPUParticles2D5" type="CPUParticles2D" parent="Particles" unique_id=2022954351]
 position = Vector2(2323, 1082)
 amount = 94
-lifetime = 1.9200000000000002
+lifetime = 1.92
 emission_shape = 3
 emission_rect_extents = Vector2(476.63, 1)
 gravity = Vector2(0, -980)
@@ -58,7 +59,7 @@ color_initial_ramp = SubResource("Gradient_lb7m0")
 [node name="CPUParticles2D6" type="CPUParticles2D" parent="Particles" unique_id=1566474144]
 position = Vector2(3271, 1083)
 amount = 94
-lifetime = 1.9200000000000002
+lifetime = 1.92
 emission_shape = 3
 emission_rect_extents = Vector2(476.63, 1)
 gravity = Vector2(0, -980)
@@ -67,3 +68,7 @@ scale_amount_max = 17.25
 scale_amount_curve = SubResource("Curve_y83ao")
 color = Color(0, 0.6847455, 0.50571704, 1)
 color_initial_ramp = SubResource("Gradient_lb7m0")
+
+[node name="Sfx_Event" type="AudioStreamPlayer" parent="." unique_id=1898220662]
+stream = ExtResource("2_lb7m0")
+parameters/looping = true

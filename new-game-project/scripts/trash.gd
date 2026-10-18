@@ -6,6 +6,7 @@ class_name Trash
 @export var nearby_trash: Area2D 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var nearby: Area2D = $Nearby
+@onready var sfx_cleaned: AudioStreamPlayer = $Sfx_Cleaned
 
 var trash_xp = 0
 var roomba_enter := false
@@ -96,6 +97,7 @@ func roomba_touched():
 		await get_tree().create_timer(0.5).timeout
 	if hp == 0:
 		trash.queue_free()
+		play_cleaned()
 		give_score.emit(score_give)
 
 func _on_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
@@ -130,3 +132,6 @@ func connect_to_roomba():
 	var roomba = get_tree().get_first_node_in_group("roomba")
 	if roomba:
 		give_score.connect(roomba.add_score)
+
+func play_cleaned() -> void:
+	sfx_cleaned.play()

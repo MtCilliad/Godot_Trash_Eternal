@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://gwlwmgh0ch73" path="res://Assets/Images/Background/Menu BG/280x190 main_menu_bg[new].png" id="2_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://c60ggdvo8rm6b" path="res://Assets/Images/Buttons/play_button.png" id="3_sugp2"]
 [ext_resource type="Texture2D" uid="uid://5axjesr8t1i8" path="res://Assets/Images/Buttons/exit_button.png" id="4_jyhfs"]
+[ext_resource type="AudioStream" uid="uid://xigcgy31ah2u" path="res://Assets/Sounds/Bg1.mp3" id="5_tbgi4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qc6lc"]
 atlas = ExtResource("3_sugp2")
@@ -70,6 +71,11 @@ texture_normal = SubResource("AtlasTexture_0wfyh")
 texture_pressed = SubResource("AtlasTexture_sugp2")
 texture_hover = SubResource("AtlasTexture_jyhfs")
 stretch_mode = 0
+
+[node name="Sfx_Main" type="AudioStreamPlayer" parent="." unique_id=1747894145]
+stream = ExtResource("5_tbgi4")
+volume_db = -5.0
+autoplay = true
 
 [connection signal="pressed" from="Control/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Control/Quit" to="." method="_on_quit_pressed"]
