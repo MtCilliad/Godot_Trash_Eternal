@@ -97,8 +97,9 @@ func roomba_touched():
 	while(hp > 0 and roomba_enter):
 		hp -= 5
 		print("hit, hp = ", hp)
-		await get_tree().create_timer(0.5).timeout
-	if hp == 0:
+		if hp != 0 or hp > 0:
+			await get_tree().create_timer(0.5).timeout
+	if hp <= 0:
 		trash.queue_free()
 		play_cleaned()
 		give_score.emit(score_give)

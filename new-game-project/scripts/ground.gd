@@ -14,8 +14,8 @@ var timer
 
 #days
 var day : int
-var day_timer := 0.0
-var day_interval := 20
+var day_timer : float
+var day_interval : int
 
 #event
 var event_chance : float
@@ -37,13 +37,16 @@ func _init() -> void:
 	event_chance = 0.4
 	current_spawn_rate = 1.0
 	event_active = false
+	
 	#ground value assignmenet
 	_ground_hp = 300
 	_dmg_timer = 0.0
 	_dmg_interval = 20.0
 	
-
-# Called when the node enters the scene tree for the first time.
+	#day value assignment
+	day_timer = 0.0
+	day_interval = 20
+	
 func _ready() -> void:
 	add_to_group("ground")
 	new_game()
@@ -72,7 +75,7 @@ func take_damage(sec_past : float, trash_group : String) -> void:
 		if _ground_hp == 0:
 			print("game over")
 			earth.visible = false
-			game_over.emit()
+			game_over.emit()	
 
 func new_day(sec_past : float) -> void:
 	day_timer += sec_past
