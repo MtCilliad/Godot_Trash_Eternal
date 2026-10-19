@@ -11,7 +11,7 @@ class_name Trash
 var trash_xp = 0
 var roomba_enter := false
 var checking := true
-var trash_level_max = 22
+const trash_level_max = 22
 var trash_is_max := false
 var is_pile := false
 var variation : Array = ["Var1", "Var2"]
@@ -25,6 +25,9 @@ var chosen = variation.pick_random()
 signal trash_detected(trash: Area2D, if_full: bool)
 signal trash_dmg(damage)
 signal give_score(score : int)
+
+func _init() -> void:
+	pass
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
