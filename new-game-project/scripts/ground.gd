@@ -33,7 +33,7 @@ signal brand_new_day(day_number : int)
 signal trigger_event(trigger : String)
 
 func _init() -> void:
-	ground hp = 500
+	ground_hp = 500
 	dmg_timer = 0.0
 	dmg_interval = 20.0
 
