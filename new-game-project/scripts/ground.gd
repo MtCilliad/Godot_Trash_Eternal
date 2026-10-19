@@ -92,13 +92,13 @@ func new_day(sec_past : float) -> void:
 				sfx_ground.play() 
 			trigger_event.emit("No")
 			print("Event not triggered")
-	if _ground_hp >= 400:
+	if _ground_hp >= 225:
 		change_state(true, false, false, false, "State1")
-	elif _ground_hp >= 300 and _ground_hp <= 399:
+	elif _ground_hp >= 150 and _ground_hp <= 224:
 		change_state(false, true, false, false, "State2")
-	elif _ground_hp >= 200 and _ground_hp <= 299:
+	elif _ground_hp >= 75 and _ground_hp <= 149:
 		change_state(false, false, true, false, "State3")
-	elif _ground_hp >= 100 and _ground_hp <= 199:
+	elif _ground_hp >= 0 and _ground_hp <= 74:
 		change_state(false, false, false, true, "State4")
 		
 func change_state(state1 : bool, state2 : bool, state3 : bool, state4 : bool, sewers : String):
