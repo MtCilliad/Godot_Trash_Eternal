@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 func _on_ground_brand_new_day(day_number: int) -> void:
 	transition.visible = true
 	print("transition is playing")
-	transition.play("default")
+	transition.play("transparent")
 	sfx_transition.play()
 
 

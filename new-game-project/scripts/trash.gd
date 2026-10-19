@@ -103,7 +103,7 @@ func roomba_touched():
 		if hp != 0 or hp > 0:
 			await get_tree().create_timer(0.5).timeout
 	if hp <= 0:
-		AudioManager.play_audio("cleaned")
+		AudioManager.play_audio("cleaned", -10.0)
 		trash.queue_free()
 		give_score.emit(score_give)
 

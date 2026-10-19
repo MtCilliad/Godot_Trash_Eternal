@@ -264,9 +264,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_q40sd")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"transparent",
-"speed": 13.0
+"speed": 12.0
 }]
 
 [node name="Transition" type="CanvasLayer" unique_id=1215688452]
@@ -276,9 +276,8 @@ texture_filter = 1
 position = Vector2(464.99997, 302)
 scale = Vector2(3.2437491, 3.2437496)
 sprite_frames = SubResource("SpriteFrames_qii31")
-autoplay = "default"
-frame = 17
-frame_progress = 1.0
+animation = &"transparent"
+autoplay = "transparent"
 
 [node name="Sfx_Transition" type="AudioStreamPlayer" parent="." unique_id=412201324]
 stream = ExtResource("3_px735")
