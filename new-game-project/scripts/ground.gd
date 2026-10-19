@@ -23,14 +23,19 @@ var current_spawn_rate := 1.0
 var event_active := false
 
 #Ground
-var ground_hp = 500
-var dmg_timer := 0.0
-var dmg_interval := 3.0
+var ground_hp : int
+var dmg_timer : float
+var dmg_interval : float
 
 #Signals
 signal game_over
 signal brand_new_day(day_number : int)
 signal trigger_event(trigger : String)
+
+func _init() -> void:
+	ground hp = 500
+	dmg_timer = 0.0
+	dmg_interval = 20.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
