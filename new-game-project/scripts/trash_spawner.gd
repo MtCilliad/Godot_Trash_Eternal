@@ -12,6 +12,7 @@ var _trash_spawn_interval : float
 var trash_spawn_rate : float
 var _trash_spawn_chance : float
 
+#testing
 func _init() -> void:
 	_trash_timer = 0.0
 	_trash_spawn_interval = 2.0
