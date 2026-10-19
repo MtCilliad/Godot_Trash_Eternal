@@ -49,7 +49,7 @@ func _ready() -> void:
 	new_game()
 	sfx_ground.play()
 	earth.value = _ground_hp
-	earth.visible = true
+	earth.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
