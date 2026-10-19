@@ -38,10 +38,11 @@ func _display_score(score : int) -> void:
 	scores.text = "Score: " + hold
 	send_final_score.emit(score)
 	var current_score = score
-	if score > SaveLoad.highest_record:
-		SaveLoad.highest_record = current_score
+	if score > SaveLoad.get_highest_record():
+		SaveLoad.set_highest_record(current_score)
 		highest.text = str("Highest: ",score)
 	SaveLoad.save_score()
 		
 func _display_highest_record() -> void:
-	highest.text = str("Highest: ", SaveLoad.highest_record)
+	var score_highest = SaveLoad.get_highest_record()
+	highest.text = str("Highest: ", score_highest)

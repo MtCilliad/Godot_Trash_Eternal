@@ -1,11 +1,11 @@
 extends Node2D
 
 #humans
-var human_scene = preload("res://scenes/humanv_2.tscn")
-var humans : Array
-var human_direction
-var human_timer : float = 0.0 #for spawning
-var human_spawn_interval : float = 5.0
+var _human_scene = preload("res://scenes/humanv_2.tscn")
+var _humans : Array
+var _human_direction
+var _human_timer : float = 0.0 #for spawning
+var _human_spawn_interval : float = 5.0
 var human_spawn_rate : float = 1.0
 
 # Called when the node enters the scene tree for the first time.
@@ -15,23 +15,23 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	human_timer += delta * human_spawn_rate
-	if human_timer >= human_spawn_interval:
+	_human_timer += delta * human_spawn_rate
+	if _human_timer >= _human_spawn_interval:
 		print("Spawned")
-		human_timer -= human_spawn_interval
+		_human_timer -= _human_spawn_interval
 		generate_human()
 	
-	for hums in humans:
+	for hums in _humans:
 		if hums.position.x < (-2100) or hums.position.x > (3400):
 			kill_human(hums)
 
 func kill_human(hums):
 	hums.queue_free()
-	humans.erase(hums)
+	_humans.erase(hums)
 	print("humans killed")
 		
 func generate_human():
-	var hums = human_scene
+	var hums = _human_scene
 	hums = hums.instantiate()
 	if randi() % 2 == 0:
 		hums.human_direction = "Right"
@@ -48,7 +48,7 @@ func add_hums(hums):
 	add_child(hums)
 	hums.roomba_touched.connect(_on_humanv_2_roomba_touched)
 	print(hums.position.x)
-	humans.append(hums)
+	_humans.append(hums)
 	
 #signals
 func _on_humanv_2_roomba_touched() -> void:

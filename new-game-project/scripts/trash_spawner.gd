@@ -7,10 +7,10 @@ const trash_scene = [
 	preload("uid://bcaxjoaon1crh"),
 	#preload("uid://cjahwre1kv70c")
 ]
-var trash_timer : float = 0.0
-var trash_spawn_interval : float = 2.0
+var _trash_timer : float = 0.0
+var _trash_spawn_interval : float = 2.0
 var trash_spawn_rate : float = 1.0
-var trash_spawn_chance : float = 0.5
+var _trash_spawn_chance : float = 0.5
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,10 +18,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	trash_timer += delta * trash_spawn_rate
-	if trash_timer >= trash_spawn_interval:
-		trash_timer -= trash_spawn_interval
-		if randf() < trash_spawn_chance:
+	_trash_timer += delta * trash_spawn_rate
+	if _trash_timer >= _trash_spawn_interval:
+		_trash_timer -= _trash_spawn_interval
+		if randf() < _trash_spawn_chance:
 			_generate_trash()
 
 func _generate_trash():
