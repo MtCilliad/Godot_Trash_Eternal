@@ -54,6 +54,7 @@ func take_damage(sec_past : float, trash_group : String) -> void:
 		dmg_timer -= dmg_interval
 		var total := 0
 		for trash_dmg in get_tree().get_nodes_in_group(trash_group):
+			print(trash_dmg.dmg)
 			total += trash_dmg.dmg
 		ground_hp = max(ground_hp - total, 0)
 		earth.value = ground_hp

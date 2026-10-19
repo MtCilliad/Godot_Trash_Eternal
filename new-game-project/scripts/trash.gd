@@ -2,11 +2,11 @@ extends Area2D
 class_name Trash
 
 @onready var trash: Area2D = $"."
-@export var health: ProgressBar
-@export var nearby_trash: Area2D 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var nearby: Area2D = $Nearby
 @onready var sfx_cleaned: AudioStreamPlayer = $Sfx_Cleaned
+@export var health: ProgressBar
+@export var nearby_trash: Area2D 
 
 var trash_xp = 0
 var roomba_enter := false
