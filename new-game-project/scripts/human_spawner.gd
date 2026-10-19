@@ -8,29 +8,23 @@ var _human_timer : float = 0.0 #for spawning
 var _human_spawn_interval : float = 5.0
 var human_spawn_rate : float = 1.0
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	_human_timer += delta * human_spawn_rate
 	if _human_timer >= _human_spawn_interval:
 		print("Spawned")
 		_human_timer -= _human_spawn_interval
-		generate_human()
-	
+		_generate_human()
+
 	for hums in _humans:
 		if hums.position.x < (-2100) or hums.position.x > (3400):
-			kill_human(hums)
+			_remove_human(hums)
 
-func kill_human(hums):
+func _remove_human(hums):
 	hums.queue_free()
 	_humans.erase(hums)
-	print("humans killed")
 		
-func generate_human():
+func _generate_human():
 	var hums = _human_scene
 	hums = hums.instantiate()
 	if randi() % 2 == 0:

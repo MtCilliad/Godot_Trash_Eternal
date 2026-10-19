@@ -15,10 +15,6 @@ func _ready() -> void:
 	_new_day()
 	_display_highest_record()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func _new_day() -> void:
 	days.text = "Day: 1"
 	days.visible = true

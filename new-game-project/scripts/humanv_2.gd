@@ -24,8 +24,9 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	speed = start_speed
-	
+	_movement(start_speed)
+		
+func _movement(speed : float):
 	if human_direction == "Right":
 		humanv_2.position.x -= speed * speed_multiplier
 	elif human_direction == "Left":

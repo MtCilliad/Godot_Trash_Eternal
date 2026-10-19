@@ -94,7 +94,7 @@ func _set_health(new_value : int):
 func _set_score(new_value : int):
 	score_give = new_value
 		
-func roomba_touched():
+func _roomba_touched():
 	roomba_enter = true
 	while(hp > 0 and roomba_enter):
 		#sfx_cleaning.play()
@@ -110,7 +110,7 @@ func roomba_touched():
 func _on_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	print(body.name)
 	if body.name == "Roomba":
-		roomba_touched()		
+		_roomba_touched()		
 
 func _on_area_entered(area: Area2D) -> void:
 	print("Check if this is the area",area.name)

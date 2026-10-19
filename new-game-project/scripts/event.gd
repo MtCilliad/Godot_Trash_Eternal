@@ -17,11 +17,6 @@ func _ready() -> void:
 	add_to_group("Event")
 	_set_emitting(false)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
 func _on_ground_trigger_event(trigger : String) -> void:
 	if trigger == "Yes":
 		sfx_event.play()
