@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://r7fgkvst3urr" path="res://scripts/trash.gd" id="1_24v10"]
 [ext_resource type="Texture2D" uid="uid://frfbqbv46fan" path="res://Assets/Images/Trash/trash_pile_base_variant.png" id="2_exrr5"]
 [ext_resource type="AudioStream" uid="uid://8rkx7s83h6al" path="res://Assets/Sounds/Trash Cleaned.wav" id="3_2cq4d"]
+[ext_resource type="AudioStream" uid="uid://byyfs6j6u6x8f" path="res://Assets/Sounds/Cleaning.wav" id="4_w6jqc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qxq6i"]
 size = Vector2(49, 66)
@@ -159,6 +160,9 @@ shape = SubResource("RectangleShape2D_qc6lc")
 [node name="Sfx_Cleaned" type="AudioStreamPlayer" parent="." unique_id=1907226181]
 stream = ExtResource("3_2cq4d")
 volume_db = 3.561
+
+[node name="Sfx_Cleaning" type="AudioStreamPlayer" parent="." unique_id=25607823]
+stream = ExtResource("4_w6jqc")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

@@ -7,6 +7,7 @@ class_name Trash
 @onready var sfx_cleaned: AudioStreamPlayer = $Sfx_Cleaned
 @export var health: ProgressBar
 @export var nearby_trash: Area2D 
+@onready var sfx_cleaning: AudioStreamPlayer = $Sfx_Cleaning
 
 var trash_xp = 0
 var roomba_enter := false
@@ -25,6 +26,7 @@ var chosen = variation.pick_random()
 signal trash_detected(trash: Area2D, if_full: bool)
 signal trash_dmg(damage)
 signal give_score(score : int)
+signal trash_deleted
 
 func _init() -> void:
 	pass
@@ -95,13 +97,14 @@ func _set_score(new_value : int):
 func roomba_touched():
 	roomba_enter = true
 	while(hp > 0 and roomba_enter):
+		#sfx_cleaning.play()
 		hp -= 5
 		print("hit, hp = ", hp)
 		if hp != 0 or hp > 0:
 			await get_tree().create_timer(0.5).timeout
 	if hp <= 0:
+		AudioManager.play_audio("cleaned")
 		trash.queue_free()
-		play_cleaned()
 		give_score.emit(score_give)
 
 func _on_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
@@ -136,6 +139,3 @@ func connect_to_roomba():
 	var roomba = get_tree().get_first_node_in_group("roomba")
 	if roomba:
 		give_score.connect(roomba.add_score)
-
-func play_cleaned() -> void:
-	sfx_cleaned.play()

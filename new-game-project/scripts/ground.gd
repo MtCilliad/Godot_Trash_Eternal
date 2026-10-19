@@ -26,6 +26,7 @@ var event_active : bool
 var _ground_hp : int
 var _dmg_timer : float
 var _dmg_interval : float
+var _game_over := false
 
 #Signals
 signal game_over
@@ -75,34 +76,36 @@ func take_damage(sec_past : float, trash_group : String) -> void:
 		if _ground_hp == 0:
 			print("game over")
 			earth.visible = false
+			_game_over = true
 			game_over.emit()	
 
 func new_day(sec_past : float) -> void:
-	day_timer += sec_past
-	if day_timer >= day_interval:
-		day_timer -= day_interval
-		day += 1
-		brand_new_day.emit(day)
-		print("Day: ",day)
-		if randf() < event_chance:
-			event_active = true
-			sfx_ground.stop()
-			trigger_event.emit("Yes")
-			print("Event triggered")
-		else:
-			if event_active:
-				event_active = false
-				sfx_ground.play() 
-			trigger_event.emit("No")
-			print("Event not triggered")
-	if _ground_hp >= 225:
-		change_state(true, false, false, false, "State1")
-	elif _ground_hp >= 150 and _ground_hp <= 224:
-		change_state(false, true, false, false, "State2")
-	elif _ground_hp >= 75 and _ground_hp <= 149:
-		change_state(false, false, true, false, "State3")
-	elif _ground_hp >= 0 and _ground_hp <= 74:
-		change_state(false, false, false, true, "State4")
+	if _game_over == false:
+		day_timer += sec_past
+		if day_timer >= day_interval:
+			day_timer -= day_interval
+			day += 1
+			brand_new_day.emit(day)
+			print("Day: ",day)
+			if randf() < event_chance:
+				event_active = true
+				sfx_ground.stop()
+				trigger_event.emit("Yes")
+				print("Event triggered")
+			else:
+				if event_active:
+					event_active = false
+					sfx_ground.play() 
+				trigger_event.emit("No")
+				print("Event not triggered")
+		if _ground_hp >= 225:
+			change_state(true, false, false, false, "State1")
+		elif _ground_hp >= 150 and _ground_hp <= 224:
+			change_state(false, true, false, false, "State2")
+		elif _ground_hp >= 75 and _ground_hp <= 149:
+			change_state(false, false, true, false, "State3")
+		elif _ground_hp >= 0 and _ground_hp <= 74:
+			change_state(false, false, false, true, "State4")
 		
 func change_state(state1 : bool, state2 : bool, state3 : bool, state4 : bool, sewers : String):
 	bg1.visible = state1

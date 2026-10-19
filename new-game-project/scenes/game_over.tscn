@@ -123,8 +123,7 @@ theme_override_font_sizes/font_size = 88
 text = "Test"
 horizontal_alignment = 1
 
-[node name="Sfx_Game_Over" type="AudioStreamPlayer" parent="." unique_id=1131674322]
+[node name="Sfx_Game_Over" type="AudioStreamPlayer" parent="." unique_id=280370026]
 stream = ExtResource("4_racf3")
-volume_db = -6.0
 
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
