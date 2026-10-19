@@ -7,12 +7,17 @@ const trash_scene = [
 	preload("uid://bcaxjoaon1crh"),
 	#preload("uid://cjahwre1kv70c")
 ]
-var _trash_timer : float = 0.0
-var _trash_spawn_interval : float = 2.0
-var trash_spawn_rate : float = 1.0
-var _trash_spawn_chance : float = 0.5
+var _trash_timer : float
+var _trash_spawn_interval : float
+var trash_spawn_rate : float
+var _trash_spawn_chance : float
 
-# Called when the node enters the scene tree for the first time.
+func _init() -> void:
+	_trash_timer = 0.0
+	_trash_spawn_interval = 2.0
+	trash_spawn_rate = 1.0
+	_trash_spawn_chance = 0.5
+	
 func _ready() -> void:
 	_connect_to_event()
 
