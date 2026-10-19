@@ -18,14 +18,14 @@ var day_timer := 0.0
 var day_interval := 20
 
 #event
-var event_chance := 0.4
-var current_spawn_rate := 1.0
-var event_active := false
+var event_chance : float
+var current_spawn_rate : float
+var event_active : bool
 
 #Ground
-var ground_hp : int
-var dmg_timer : float
-var dmg_interval : float
+var _ground_hp : int
+var _dmg_timer : float
+var _dmg_interval : float
 
 #Signals
 signal game_over
@@ -33,17 +33,23 @@ signal brand_new_day(day_number : int)
 signal trigger_event(trigger : String)
 
 func _init() -> void:
-	ground_hp = 500
-	dmg_timer = 0.0
-	dmg_interval = 20.0
+	#event value assignment
+	event_chance = 0.4
+	current_spawn_rate = 1.0
+	event_active = false
+	#ground value assignmenet
+	_ground_hp = 300
+	_dmg_timer = 0.0
+	_dmg_interval = 20.0
+	
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	add_to_group("ground")
 	new_game()
 	sfx_ground.play()
-	earth.value = ground_hp
-	earth.visible = false
+	earth.value = _ground_hp
+	earth.visible = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -54,16 +60,16 @@ func new_game():
 	day = 1
 	
 func take_damage(sec_past : float, trash_group : String) -> void:
-	dmg_timer += sec_past
-	if dmg_timer >= dmg_interval:
-		dmg_timer -= dmg_interval
+	_dmg_timer += sec_past
+	if _dmg_timer >= _dmg_interval:
+		_dmg_timer -= _dmg_interval
 		var total := 0
 		for trash_dmg in get_tree().get_nodes_in_group(trash_group):
 			print(trash_dmg.dmg)
 			total += trash_dmg.dmg
-		ground_hp = max(ground_hp - total, 0)
-		earth.value = ground_hp
-		if ground_hp == 0:
+		_ground_hp = max(_ground_hp - total, 0)
+		earth.value = _ground_hp
+		if _ground_hp == 0:
 			print("game over")
 			earth.visible = false
 			game_over.emit()
@@ -86,13 +92,13 @@ func new_day(sec_past : float) -> void:
 				sfx_ground.play() 
 			trigger_event.emit("No")
 			print("Event not triggered")
-	if ground_hp >= 400:
+	if _ground_hp >= 400:
 		change_state(true, false, false, false, "State1")
-	elif ground_hp >= 300 and ground_hp <= 399:
+	elif _ground_hp >= 300 and _ground_hp <= 399:
 		change_state(false, true, false, false, "State2")
-	elif ground_hp >= 200 and ground_hp <= 299:
+	elif _ground_hp >= 200 and _ground_hp <= 299:
 		change_state(false, false, true, false, "State3")
-	elif ground_hp >= 100 and ground_hp <= 199:
+	elif _ground_hp >= 100 and _ground_hp <= 199:
 		change_state(false, false, false, true, "State4")
 		
 func change_state(state1 : bool, state2 : bool, state3 : bool, state4 : bool, sewers : String):

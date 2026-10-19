@@ -28,4 +28,5 @@ script = ExtResource("7_gee14")
 [connection signal="brand_new_day" from="Ground" to="Transition" method="_on_ground_brand_new_day"]
 [connection signal="game_over" from="Ground" to="game_over" method="_on_ground_game_over"]
 [connection signal="game_over" from="Ground" to="UI" method="_on_ground_game_over"]
+[connection signal="game_over" from="Ground" to="Transition" method="_on_ground_game_over"]
 [connection signal="send_final_score" from="UI" to="game_over" method="_on_ui_send_final_score"]

@@ -15,3 +15,7 @@ func _on_ground_brand_new_day(day_number: int) -> void:
 	print("transition is playing")
 	transition.play("default")
 	sfx_transition.play()
+
+
+func _on_ground_game_over() -> void:
+	transition.visible = false

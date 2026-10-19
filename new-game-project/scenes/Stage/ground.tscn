@@ -976,7 +976,6 @@ autoplay = "State1"
 stream = ExtResource("12_2fw2u")
 volume_db = -6.0
 autoplay = true
-stream_paused = true
 max_distance = 500.0
 parameters/looping = true
 
@@ -1038,7 +1037,7 @@ offset_right = 822.0
 offset_bottom = 48.0
 theme_override_styles/background = SubResource("StyleBoxFlat_vehv0")
 theme_override_styles/fill = SubResource("StyleBoxFlat_2odsf")
-max_value = 500.0
+max_value = 300.0
 
 [node name="Sfx_Ground" type="AudioStreamPlayer" parent="." unique_id=971142385]
 stream = ExtResource("15_j3d4b")
