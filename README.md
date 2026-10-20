@@ -9,4 +9,5 @@ Setup instructions:
 (1) Open the Builds/Trash Eternal folder; (2) Download and extract the Trash Eternal zip file into a folder; (3) Open the folder and click on Trash Eternal.exe; (4) Enjoy!
 
 
-If it's not possible to download Trash Eternal.zip directly, download the branch as a zip file via: <img width="382" height="389" alt="image" src="https://github.com/user-attachments/assets/a9ac18b9-6700-4d01-b7be-8700ee8835e9" />
+If it's not possible to download Trash Eternal.zip directly, download the branch as a zip file via: <img width="391" height="349" alt="image" src="https://github.com/user-attachments/assets/b417cc5c-01e3-485e-bd2f-a34bc70f37b8" />
+
