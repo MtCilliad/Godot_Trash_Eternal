@@ -6,4 +6,4 @@ Important Features include: The littering mechanics itself which has rates that 
 OOP implementation include: Abstraction via the use of Scenes to display the game running and hiding the logic behind scripts; Inheritance via having like subclasses Organic Plastic and Metal inheret from Trash and its methods; Polymorphism via having the three trash subclasses use the same attribute names but differ in values; Encapsulation via having the variable score privated and using setters to change its value and using getter to display the saved highest.
 
 Setup instructions:
-(1) Open the Trash Eternal/Builds folder; (2) Download and extract the Trash Eternal zip file into a folder; (3) Open the folder and click on Trash Eternal.exe; (4) Enjoy!
+(1) Open the Builds/Trash Eternal folder; (2) Download and extract the Trash Eternal zip file into a folder; (3) Open the folder and click on Trash Eternal.exe; (4) Enjoy!
